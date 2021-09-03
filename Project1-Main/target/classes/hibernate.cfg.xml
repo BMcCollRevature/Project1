@@ -16,6 +16,6 @@
 			<mapping class="com.revature.pojo.Employee"/>
 			<mapping class="com.revature.pojo.Reimbursement"/>
 			<mapping class="com.revature.pojo.Admin"/>
-	</session-factory>
+	</session-factory>	
 
 </hibernate-configuration>
