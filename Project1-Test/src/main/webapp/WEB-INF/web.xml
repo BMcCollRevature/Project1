@@ -1,0 +1,88 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <welcome-file-list>
+  <welcome-file>home.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>AdminController</servlet-name>
+  	<display-name>AdminController</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.web.AdminController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginController</servlet-name>
+  	<display-name>LoginController</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.web.LoginController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ReimbursementController</servlet-name>
+  	<display-name>ReimbursementController</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.web.ReimbursementController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmployeeController</servlet-name>
+  	<display-name>EmployeeController</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.web.EmployeeController</servlet-class>
+</servlet>
+  <servlet>
+  	<servlet-name>LoginController1</servlet-name>
+  	<display-name>LoginController1</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.web.LoginController1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AdminController</servlet-name>
+  	<url-pattern>/AdminController</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>AdminController</servlet-name>
+  	<url-pattern>/insertAdmin</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginController</servlet-name>
+  	<url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginController</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>ReimbursementController</servlet-name>
+  	<url-pattern>/ReimbursementController</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>ReimbursementController</servlet-name>
+  	<url-pattern>/insertReimb</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeController</servlet-name>
+  	<url-pattern>/EmployeeController</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>EmployeeController</servlet-name>
+  	<url-pattern>/insertEmployee</url-pattern>
+  	</servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>LoginController1</servlet-name>
+    	<url-pattern>/LoginController1</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+    	<servlet-name>LoginController1</servlet-name>
+    	<url-pattern>/login1</url-pattern>
+    </servlet-mapping>
+</web-app>
