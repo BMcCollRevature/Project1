@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin Register</title>
+<title>Update Reimbursement</title>
 
 <link rel="stylesheet"
  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -39,7 +39,6 @@
   </div>
 </nav>
 
-
  <div class="container">
 
  <hr>
@@ -47,45 +46,61 @@
 
    <div class="card card-body">
 
-    <h2>Admin Register Form</h2>
+    <h2>Reimbursement Register Form</h2>
     <div class="col-md-8 col-md-offset-3">
 
-     <form action="<%=request.getContextPath()%>/insertAdmin" method="post">
+     <form action="<%=request.getContextPath()%>/update" method="post">
 
+  	<div class="form-group">
+       <label for="uname">ID:</label> <input type="text"
+        class="form-control" id="id" placeholder="ID"
+        name="id" required>
+      </div>
+      
       <div class="form-group">
-       <label for="uname">User Name:</label> <input type="text"
-        class="form-control" id="username" placeholder="User Name"
-        name="username" required>
+       <label for="uname">Amount:</label> <input type="text"
+        class="form-control" id="amount" placeholder="Amount"
+        name="amount" required>
       </div>
 
       <div class="form-group">
-       <label for="uname">Password:</label> <input type="password"
-        class="form-control" id="password" placeholder="Password"
-        name="password" required>
+       <label for="uname">Author:</label> <input type="text"
+        class="form-control" id="author" placeholder="Name"
+        name="author" required>
       </div>
 
       <div class="form-group">
-       <label for="uname">First Name:</label> <input type="text"
-        class="form-control" id="uname" placeholder="First Name"
-        name="firstname" required>
+       <label for="uname">Description:</label> <input type="text"
+        class="form-control" id="description" placeholder="description"
+        name="description" required>
       </div>
+      
+    <div class="form-group">
+       <label for="uname">Status:</label> 
+       <select class="form-select" name = "status"  id="status">
+       <option selected></option>
+       <option value = "APPROVED"> APPROVED</option>
+       <option value = "DECLINED"> DECLINED</option>
+       </select>
+      </div> 
+      
+       <div class="form-group">
+       <label for="uname">Type:</label>
+       <select class="form-select" name = "type"  id="type">
+       <option selected></option>
+       <option value = "LODGING"> LODGING</option>
+       <option value = "TRAVEL"> TRAVEL</option>
+       <option value = "FOOD"> FOOD</option>
+       <option value = "OTHER"> OTHER</option>
 
-      <div class="form-group">
-       <label for="uname">Last Name:</label> <input type="text"
-        class="form-control" id="uname" placeholder="last Name"
-        name="lastname" required>
-      </div>
+       </select>
 
-      <div class="form-group">
-       <label for="uname">Email:</label> <input type="text"
-        class="form-control" id="email" placeholder="Email"
-        name="email" required>
       </div>
 
 
 
       <button type="submit" class="btn btn-primary">Submit</button>
-	<a class="btn btn-link" href="login.jsp" role="button">Already have an account?</a>
+
      </form>
     </div>
    </div>

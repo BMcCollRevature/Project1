@@ -96,7 +96,7 @@ public class EmployeeController extends HttpServlet {
 		Employee newEmployee = new Employee(0, username, password, firstname, lastname, email);
 		employeeDAO.saveEmployee(newEmployee);
 		
-		response.sendRedirect("employee-list.jsp");
+		response.sendRedirect("login.jsp");
 	}
 
 	private void updateEmployee(HttpServletRequest request, HttpServletResponse response)

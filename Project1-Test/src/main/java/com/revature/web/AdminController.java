@@ -42,19 +42,19 @@ public class AdminController extends HttpServlet {
 				showNewForm(request, response);
 				break;
 			case "/insertAdmin":
-				insertEmployee(request, response);
+				insertAdmin(request, response);
 				break;
 			case "/delete":
-				deleteEmployee(request, response);
+				deleteAdmin(request, response);
 				break;
 			case "/edit":
 				showEditForm(request, response);
 				break;
 			case "/update":
-				updateEmployee(request, response);
+				updateAdmin(request, response);
 				break;
 			default:
-				listEmployee(request, response);
+				listAdmin(request, response);
 				break;
 			}
 		} catch (SQLException ex) {
@@ -62,7 +62,7 @@ public class AdminController extends HttpServlet {
 		}
 	}
 
-	private void listEmployee(HttpServletRequest request, HttpServletResponse response)
+	private void listAdmin(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<Admin> listAdmin = adminDAO.getAllAdmin();
 		request.setAttribute("listEmployee", listAdmin);
@@ -86,7 +86,7 @@ public class AdminController extends HttpServlet {
 
 	}
 
-	private void insertEmployee(HttpServletRequest request, HttpServletResponse response)
+	private void insertAdmin(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -95,10 +95,10 @@ public class AdminController extends HttpServlet {
 		String email = request.getParameter("email");
 		Admin newAdmin = new Admin(0, username, password, firstname, lastname, email);
 		adminDAO.saveAdmin(newAdmin);
-		response.sendRedirect("list");
+		response.sendRedirect("adminlogin.jsp");
 	}
 
-	private void updateEmployee(HttpServletRequest request, HttpServletResponse response)
+	private void updateAdmin(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		String username = request.getParameter("username");
@@ -112,7 +112,7 @@ public class AdminController extends HttpServlet {
 		response.sendRedirect("list");
 	}
 
-	private void deleteEmployee(HttpServletRequest request, HttpServletResponse response)
+	private void deleteAdmin(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		adminDAO.deleteAdmin(id);

@@ -68,6 +68,17 @@
   	<servlet-name>ReimbursementController</servlet-name>
   	<url-pattern>/insertReimb</url-pattern>
   </servlet-mapping>
+  
+      <servlet-mapping>
+  	<servlet-name>ReimbursementController</servlet-name>
+  	<url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  
+        <servlet-mapping>
+  	<servlet-name>ReimbursementController</servlet-name>
+  	<url-pattern>/deleteReimb</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>EmployeeController</servlet-name>
   	<url-pattern>/EmployeeController</url-pattern>

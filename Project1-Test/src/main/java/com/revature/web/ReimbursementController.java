@@ -1,7 +1,6 @@
 package com.revature.web;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Calendar;
@@ -47,7 +46,7 @@ public class ReimbursementController extends HttpServlet {
 			case "/insertReimb":
 				insertReimb(request, response);
 				break;
-			case "/delete":
+			case "/deleteReimb":
 				deleteReimb(request, response);
 				break;
 			case "/edit":
@@ -110,29 +109,37 @@ public class ReimbursementController extends HttpServlet {
 		String type = request.getParameter("type");
 		Reimbursement newReimb = new Reimbursement(0, amount,  submitted, resolved, author, description, status, type);
 		reimbursementDAO.saveReimbursement(newReimb);
-		response.sendRedirect("list");
+		response.sendRedirect("reimbsuccess.jsp");
 	}
 
 	private void updateReimb(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		double amount = Double.parseDouble(request.getParameter("amount"));
-		Timestamp submitted = Timestamp.valueOf(request.getParameter("submitted"));
-		Timestamp resolved = Timestamp.valueOf(request.getParameter("resolved"));
+		Calendar cal = Calendar.getInstance();
+		java.util.Date now = cal.getTime();
+		Timestamp sub = new Timestamp(now.getTime());
+		Timestamp submitted = Reimbursement.setReimSubmitted(sub);
+		
+		Calendar cal1 = Calendar.getInstance();
+		java.util.Date now1 = cal1.getTime();
+		Timestamp resolve = new Timestamp(now1.getTime());
+		Timestamp resolved = Reimbursement.setReimResolved(resolve);
+		
 		String author = request.getParameter("author");
-		String description = request.getParameter("decription");
+		String description = request.getParameter("description");
 		String status = request.getParameter("status");
 		String type = request.getParameter("type");
 
-		Reimbursement reimb = new Reimbursement(id, amount, submitted, resolved, author, description, status, type);
+		Reimbursement reimb = new Reimbursement(id,amount, submitted, resolved, author, description, status, type);
 		reimbursementDAO.updateReimbursement(reimb);
-		response.sendRedirect("list");
+		response.sendRedirect("ReimbList.jsp");
 	}
 
 	private void deleteReimb(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		reimbursementDAO.deleteReimbursement(id);
-		response.sendRedirect("list");
+		response.sendRedirect("ReimbList.jsp");
 	}
 }
