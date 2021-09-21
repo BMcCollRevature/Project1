@@ -18,6 +18,8 @@ Getting Started:
 
 Usage:
 
-Contributors:
+<h3>Contributors:</h3>
+* Brigitte McColl
+* Philip Ahn
 
 License:
