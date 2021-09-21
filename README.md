@@ -19,6 +19,7 @@ Getting Started:
 Usage:
 
 <h3>Contributors:</h3>
+
 * Brigitte McColl
 * Philip Ahn
 
