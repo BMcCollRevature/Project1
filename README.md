@@ -4,11 +4,12 @@
 
 The Expense Reimbursement System (ERS) will manage the process of reimbursing employees for expenses incurred while on company time. All employees in the company can log in and submit requests for reimbursement and view their past tickets and pending requests. Finance managers can log in and view all reimbursement requests and past history for all employees in the company. Finance managers are authorized to approve and deny requests for expense reimbursement.
 
-<h3>Technologies Used:
+<h3>Technologies Used:</h3>
 
-Java, Hibernate
+* Java
+* Hibernate
 
-Features:
+<h3>Features:</h3>
 
 featuressss
 
