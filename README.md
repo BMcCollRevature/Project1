@@ -11,7 +11,7 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 
 <h3>Features:</h3>
 
-featuressss
+There are two ways to use this project as an Employee or a Finance Manager. The Employees can log in and fill out a reimbursement form and submit it. The Finance Managers can as submit a reimbursement form and can also see all the reimbursements and approve or deny these requests. 
 
 
 Getting Started:
